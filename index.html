@@ -1,32 +1,115 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#11172b"><title>PICO-8 Game Cards — Unofficial Collector Project</title><style>
 :root{--bg:#101629;--panel:#1a2440;--panel2:#243253;--ink:#f5f0dc;--muted:#aebad0;--yellow:#ffc75d;--pink:#ff6c85;--cyan:#65dfd6;--border:#435174}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,Arial,sans-serif;background-image:linear-gradient(transparent 97%,#ffffff05 100%);background-size:100% 5px}a{color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1140px;margin:auto;padding:0 22px}header{position:sticky;top:0;z-index:10;background:#101629ee;backdrop-filter:blur(12px);border-bottom:2px solid var(--border)}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px}.logo{font-weight:900;letter-spacing:.05em;text-decoration:none;color:var(--yellow)}.logo span{color:var(--cyan)}nav{display:flex;gap:20px;align-items:center}nav a{text-decoration:none;font-weight:700;font-size:.9rem}nav a:hover{color:var(--yellow)}.btn{border:2px solid var(--yellow);border-radius:5px;background:var(--yellow);color:#11172b;padding:12px 18px;font-weight:900;text-decoration:none;display:inline-block;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:transparent;color:var(--yellow)}.btn.small{padding:7px 11px;font-size:.85rem}.hero{padding:90px 0 75px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}.eyebrow{color:var(--cyan);font-size:.78rem;letter-spacing:.18em;font-weight:900;text-transform:uppercase}h1,h2,h3{line-height:1.14}h1{font-size:clamp(2.6rem,6vw,5.2rem);margin:16px 0 22px;letter-spacing:-.045em}h1 em{font-style:normal;color:var(--yellow)}h2{font-size:clamp(1.9rem,4vw,3rem);margin:10px 0 20px}.lead{font-size:1.13rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero-art{display:grid;grid-template-columns:1fr 1fr;gap:15px;transform:rotate(5deg)}.hero-art .gamecard:nth-child(2){transform:translateY(35px) rotate(6deg)}.gamecard{aspect-ratio:3/4.1;border:7px solid #bdc2c9;border-radius:12px;background:#222b44;box-shadow:8px 10px 0 #0005;overflow:hidden;display:flex;flex-direction:column;position:relative}.gamecard:before{content:'PICO-8';position:absolute;top:9px;left:9px;background:#d3d6dc;color:#232a37;font-weight:1000;font-size:10px;padding:2px 7px;z-index:1;letter-spacing:.12em}.art{flex:1;display:flex;justify-content:center;align-items:center;font-size:clamp(3rem,7vw,6rem);background:radial-gradient(circle at 50% 35%,var(--art2),var(--art1));text-shadow:5px 6px #0005}.cardfoot{background:#d4d7dd;color:#1c2637;padding:10px;font-weight:900;font-size:.8rem;letter-spacing:.04em;min-height:58px}.cardfoot small{display:block;font-weight:600;color:#566071}.section{padding:70px 0}.section.alt{background:#151e35;border-block:1px solid #34415e}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:25px}.sectionhead p{color:var(--muted);margin:0}.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 28px}.field{background:var(--panel);border:2px solid var(--border);border-radius:5px;color:var(--ink);padding:12px 14px;min-height:48px}.field:focus{outline:2px solid var(--cyan);outline-offset:2px}#search{flex:1;min-width:210px}#genre{min-width:190px}.count{color:var(--muted);align-self:center}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.tile{background:var(--panel);padding:13px;border:1px solid var(--border);border-radius:9px;display:flex;flex-direction:column;gap:12px}.tile .gamecard{box-shadow:none}.tile h3{margin:0;font-size:1rem}.tile p{color:var(--muted);font-size:.87rem;margin:0}.tile a{margin-top:auto;color:var(--cyan);font-weight:800;text-decoration:none}.tile a:hover{text-decoration:underline}.number{font-size:.72rem;color:var(--yellow);font-weight:900}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:var(--panel);padding:23px;border:1px solid var(--border);border-radius:8px}.step b{font-size:1.8rem;color:var(--yellow)}.step h3{margin:8px 0}.step p{color:var(--muted);margin:0;font-size:.9rem}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}.panel{background:var(--panel);border:1px solid var(--border);padding:28px;border-radius:9px}.panel label{font-size:.9rem;font-weight:750;display:block;margin:16px 0 6px}.panel .field{width:100%}.panel textarea{min-height:110px;resize:vertical}.check{display:flex;align-items:start;gap:10px;margin:20px 0}.check input{margin-top:6px;accent-color:var(--yellow)}.check label{margin:0;font-size:.85rem;font-weight:400}.notice{border-left:4px solid var(--cyan);padding:13px 17px;background:#203552;color:#d9e7f4;font-size:.88rem;margin:18px 0}.notice.warning{border-color:var(--yellow)}.message{margin-top:14px;color:var(--cyan);font-weight:700}.muted{color:var(--muted)}footer{border-top:2px solid var(--border);padding:35px 0;color:var(--muted);font-size:.88rem}footer a{color:var(--cyan)}.empty{padding:35px;background:var(--panel);border-radius:8px}.menu-toggle{display:none}@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{max-width:440px;margin:0 auto 35px}.gallery{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}@media(max-width:570px){.menu-toggle{display:block;background:transparent;border:1px solid var(--border);color:var(--ink);padding:7px 10px;border-radius:4px}nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--bg);padding:20px;flex-direction:column;align-items:stretch;border-bottom:2px solid var(--border)}nav.open{display:flex}.gallery{gap:12px}.tile{padding:9px}.steps{grid-template-columns:1fr}.section{padding:50px 0}.hero{padding-top:50px}.panel{padding:18px}}
+
+.card-flip {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  perspective: 900px;
+}
+.card-flip:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+.card-faces {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 450ms ease;
+}
+.card-flip[aria-pressed="true"] .card-faces { transform: rotateY(180deg); }
+.card-face {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+.card-faces { border-radius: inherit; }
+.card-face--back { transform: rotateY(180deg); }
+.card-face img { display: block; width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .card-faces { transition: none; }
+}
 </style></head><body>
 <header><div class="wrap nav"><a href="#home" class="logo">▣ PICO-8 <span>GAME CARDS</span></a><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button><nav id="nav"><a href="#collection">Collection</a><a href="#how">How it works</a><a href="#about">About</a><a class="btn small" href="#submit">Submit a game</a></nav></div></header>
 <main><section class="wrap hero" id="home"><div><div class="eyebrow">Unofficial • Community-driven • Retro-inspired</div><h1>TINY GAMES.<br><em>BIG LEGENDS.</em></h1><p class="lead">Your favorite PICO-8 games, reimagined as physical collectible cards. A curated tribute to indie developers and the golden age of gaming.</p><div class="actions"><a href="#collection" class="btn">Explore the collection ↗</a><a href="#submit" class="btn secondary">Submit your game</a></div></div><div class="hero-art" aria-label="Illustrative card designs"><div class="gamecard" style="--art1:#291a51;--art2:#9a4376"><div class="art" aria-hidden="true">👻</div><div class="cardfoot">GHOST THIEF<small>DEMO CARD · 001</small></div></div><div class="gamecard" style="--art1:#16435d;--art2:#75cde1"><div class="art" aria-hidden="true">🚀</div><div class="cardfoot">STAR RUNNER<small>FICTIONAL DEMO · 002</small></div></div></div></section>
-<section class="section alt" id="collection"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">The archive</div><h2>Explore the cards</h2><p>Illustrative placeholders — replace with approved game cards before publishing.</p></div></div><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search games or creators…" aria-label="Search games or creators"><select id="genre" class="field" aria-label="Filter by genre"><option value="all">All genres</option></select><span class="count" id="count"></span></div><div class="gallery" id="gallery"></div><p id="empty" class="empty" hidden>No cards match your search.</p></div></section>
+<section class="section alt" id="collection"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">The archive</div><h2>Explore the cards</h2><p>Select a card to flip it over.</p></div></div><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search games or creators…" aria-label="Search games or creators"><select id="genre" class="field" aria-label="Filter by genre"><option value="all">All genres</option></select><span class="count" id="count"></span></div><div class="gallery" id="gallery"></div><p id="empty" class="empty" hidden>No cards match your search.</p></div></section>
 <section class="section" id="how"><div class="wrap"><div class="eyebrow">Made with creators</div><h2>How it works</h2><div class="steps"><div class="step"><b>01</b><h3>Submit</h3><p>Developers nominate their own PICO-8 games.</p></div><div class="step"><b>02</b><h3>Selection</h3><p>Games are individually reviewed for a curated collection. Submission does not guarantee selection.</p></div><div class="step"><b>03</b><h3>Design & approval</h3><p>Selected developers review the card design and separately approve its permitted uses.</p></div><div class="step"><b>04</b><h3>Discover</h3><p>Approved cards appear in the gallery, linking back to their original games.</p></div></div></div></section>
 <section class="section alt" id="submit"><div class="wrap split"><div><div class="eyebrow">For PICO-8 creators</div><h2>Put your game on the map.</h2><p class="lead">Want your game to be considered for a collectible card? Tell us about it! We review each submission and retain editorial control over the collection.</p><div class="notice">Applying does not grant us permission to print or sell your game's artwork. If selected, we'll request a separate, explicit rights authorization and send the final card for your approval.</div><p class="muted">This prototype does not send or store submissions. You can copy the application and send it manually, or connect a form service when launching.</p></div><form class="panel" id="application"><h3 style="margin-top:0">Game submission</h3><label for="game">Game title *</label><input class="field" id="game" required maxlength="120" placeholder="Your PICO-8 game"><label for="creator">Creator nickname *</label><input class="field" id="creator" required maxlength="120" placeholder="Your developer name"><label for="url">Game URL *</label><input class="field" id="url" type="url" required placeholder="https://www.lexaloffle.com/bbs/..."><label for="email">Contact email *</label><input class="field" id="email" type="email" required placeholder="creator@example.com"><label for="gameGenre">Genre</label><select class="field" id="gameGenre"><option>Arcade</option><option>Action</option><option>Adventure</option><option>Platformer</option><option>Puzzle</option><option>Strategy</option><option>RPG</option><option>Other</option></select><label for="desc">Tell us about your game</label><textarea class="field" id="desc" maxlength="1000" placeholder="What makes your game special?"></textarea><div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the creator or authorized representative of this game. *</label></div><div class="check"><input type="checkbox" id="privacy" required><label for="privacy">I understand that this demo only copies my application locally and does not submit it. *</label></div><button class="btn" type="submit">Copy my application →</button><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
 <section class="section" id="about"><div class="wrap"><div class="eyebrow">About the project</div><h2>Built for the love of tiny games.</h2><p class="lead">PICO-8 Game Cards is an independent fan initiative inspired by vintage video game packaging, retro trading cards and the creativity of the PICO-8 community. Each card is a small tribute to its creator, with a link to discover the original game.</p><div class="notice warning"><strong>Unofficial project.</strong> Not affiliated with, endorsed by or sponsored by Lexaloffle or PICO-8. Game artwork remains the property of its respective rights holders. Public release and any paid printing require the relevant permissions. Add your legal notices and privacy policy before collecting real submissions.</div></div></section></main>
 <footer><div class="wrap">© <span id="year"></span> PICO-8 Game Cards — Independent fan project · <a href="#about">About & rights</a></div></footer>
 <script>
 'use strict';
-// SAMPLE DATA ONLY. Replace each entry with a game and visuals approved by its rights holders.
-const cards=[
-{id:'001',title:'Ghost Thief',creator:'Demo Creator',genre:'Action',emoji:'👻',a:'#28184b',b:'#a34d8c',url:''},
-{id:'002',title:'Star Runner',creator:'Demo Studio',genre:'Arcade',emoji:'🚀',a:'#123b63',b:'#438fba',url:''},
-{id:'003',title:'Frost Quest',creator:'Demo Creator',genre:'Adventure',emoji:'❄️',a:'#1c5265',b:'#9ad6e0',url:''},
-{id:'004',title:'Dungeon Key',creator:'Pixel Demo',genre:'Puzzle',emoji:'🗝️',a:'#3d274e',b:'#b2794d',url:''},
-{id:'005',title:'Forest Leap',creator:'Pixel Demo',genre:'Platformer',emoji:'🌲',a:'#174b42',b:'#5d9e55',url:''},
-{id:'006',title:'Neon Circuit',creator:'Demo Studio',genre:'Strategy',emoji:'⚡',a:'#39204c',b:'#e05b9c',url:''},
-{id:'007',title:'Tiny Dragon',creator:'Demo Creator',genre:'RPG',emoji:'🐉',a:'#4a292a',b:'#d8794c',url:''},
-{id:'008',title:'Deep Dive',creator:'Pixel Demo',genre:'Arcade',emoji:'🐙',a:'#0d3d5a',b:'#3198a9',url:''}
+// Each slug matches the PNG filename in both recto and verso.
+const cards = [
+  {
+    id: '001',
+    slug: 'ghost-thief-survivor',
+    title: 'Ghost Thief Survivor',
+    creator: 'Asté',
+    genre: 'Action',
+    url: 'https://www.lexaloffle.com/bbs/?tid=160000'
+  }
 ];
-const gallery=document.querySelector('#gallery'),search=document.querySelector('#search'),genre=document.querySelector('#genre');
+const gallery = document.querySelector('#gallery');
+const search = document.querySelector('#search');
+const genre = document.querySelector('#genre');
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-[...new Set(cards.map(c=>c.genre))].sort().forEach(g=>{const opt=document.createElement('option');opt.value=g;opt.textContent=g;genre.append(opt)});
-function render(){const q=search.value.toLocaleLowerCase().trim(),g=genre.value;const visible=cards.filter(c=>(g==='all'||c.genre===g)&&[c.title,c.creator,c.genre].some(s=>s.toLocaleLowerCase().includes(q)));gallery.innerHTML=visible.map(c=>`<article class="tile"><div class="gamecard" style="--art1:${c.a};--art2:${c.b}"><div class="art" aria-hidden="true">${c.emoji}</div><div class="cardfoot">${escapeHtml(c.title.toUpperCase())}<small>DEMO CARD · ${c.id}</small></div></div><div class="number">#${c.id} · ${escapeHtml(c.genre)}</div><h3>${escapeHtml(c.title)}</h3><p>By ${escapeHtml(c.creator)}</p>${c.url?`<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener noreferrer">Play the game ↗</a>`:'<span class="muted" style="font-size:.8rem">Illustrative demo only</span>'}</article>`).join('');document.querySelector('#count').textContent=`${visible.length} card${visible.length===1?'':'s'}`;document.querySelector('#empty').hidden=visible.length!==0}
-search.addEventListener('input',render);genre.addEventListener('change',render);render();
+
+for (const name of [...new Set(cards.map(card => card.genre))].sort()) {
+  genre.add(new Option(name, name));
+}
+
+function render() {
+  const query = search.value.toLocaleLowerCase().trim();
+  const visible = cards.filter(card =>
+    (genre.value === 'all' || card.genre === genre.value) &&
+    [card.title, card.creator, card.genre].some(value =>
+      value.toLocaleLowerCase().includes(query)
+    )
+  );
+
+  gallery.innerHTML = visible.map(card => {
+    const title = escapeHtml(card.title);
+    const filename = encodeURIComponent(card.slug) + '.png';
+
+    return `<article class="tile">
+      <button class="card-flip" type="button" aria-label="Show the back of ${title}" aria-pressed="false">
+        <span class="card-faces">
+          <span class="card-face">
+            <img src="images/cartes/recto/${filename}" alt="">
+          </span>
+          <span class="card-face card-face--back">
+            <img src="images/cartes/verso/${filename}" alt="">
+          </span>
+        </span>
+      </button>
+      <div class="number">#${escapeHtml(card.id)} · ${escapeHtml(card.genre)}</div>
+      <h3>${title}</h3>
+      <p>By ${escapeHtml(card.creator)}</p>
+      ${card.url ? `<a href="${escapeHtml(card.url)}" target="_blank" rel="noopener noreferrer">Play the game ↗</a>` : ''}
+    </article>`;
+  }).join('');
+
+  document.querySelector('#count').textContent =
+    `${visible.length} card${visible.length === 1 ? '' : 's'}`;
+  document.querySelector('#empty').hidden = visible.length !== 0;
+}
+
+gallery.addEventListener('click', event => {
+  const button = event.target.closest('.card-flip');
+  if (!button) return;
+
+  const flipped = button.getAttribute('aria-pressed') === 'true';
+  button.setAttribute('aria-pressed', String(!flipped));
+});
+search.addEventListener('input', render);
+genre.addEventListener('change', render);
+render();
 document.querySelector('#year').textContent=new Date().getFullYear();const menu=document.querySelector('#menuToggle'),nav=document.querySelector('#nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
 document.querySelector('#application').addEventListener('submit',async e=>{e.preventDefault();const url=document.querySelector('#url').value;let u;try{u=new URL(url);if(!['https:','http:'].includes(u.protocol))throw Error()}catch{document.querySelector('#formMessage').textContent='Please enter a valid game URL.';return}const data=`PICO-8 GAME CARDS — APPLICATION\nGame: ${document.querySelector('#game').value}\nCreator: ${document.querySelector('#creator').value}\nGame URL: ${url}\nEmail: ${document.querySelector('#email').value}\nGenre: ${document.querySelector('#gameGenre').value}\nDescription: ${document.querySelector('#desc').value}\nCreator confirmation: Yes`;try{await navigator.clipboard.writeText(data);document.querySelector('#formMessage').textContent='Application copied! This prototype has not submitted it.'}catch{const blob=new Blob([data],{type:'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pico8-game-cards-application.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);document.querySelector('#formMessage').textContent='Application downloaded as a text file. Nothing was submitted.'}});
 </script></body></html>
