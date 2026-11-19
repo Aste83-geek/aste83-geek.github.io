@@ -1,6 +1,8 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#11172b"><title>PICO-8 Game Cards — Unofficial Collector Project</title><style>
-:root{--bg:#101629;--panel:#1a2440;--panel2:#243253;--ink:#f5f0dc;--muted:#aebad0;--yellow:#ffc75d;--pink:#ff6c85;--cyan:#65dfd6;--border:#435174}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,Arial,sans-serif;background-image:linear-gradient(transparent 97%,#ffffff05 100%);background-size:100% 5px}a{color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1140px;margin:auto;padding:0 22px}header{position:sticky;top:0;z-index:10;background:#101629ee;backdrop-filter:blur(12px);border-bottom:2px solid var(--border)}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px}.logo{font-weight:900;letter-spacing:.05em;text-decoration:none;color:var(--yellow)}.logo span{color:var(--cyan)}nav{display:flex;gap:20px;align-items:center}nav a{text-decoration:none;font-weight:700;font-size:.9rem}nav a:hover{color:var(--yellow)}.btn{border:2px solid var(--yellow);border-radius:5px;background:var(--yellow);color:#11172b;padding:12px 18px;font-weight:900;text-decoration:none;display:inline-block;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:transparent;color:var(--yellow)}.btn.small{padding:7px 11px;font-size:.85rem}.hero{padding:90px 0 75px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}.eyebrow{color:var(--cyan);font-size:.78rem;letter-spacing:.18em;font-weight:900;text-transform:uppercase}h1,h2,h3{line-height:1.14}h1{font-size:clamp(2.6rem,6vw,5.2rem);margin:16px 0 22px;letter-spacing:-.045em}h1 em{font-style:normal;color:var(--yellow)}h2{font-size:clamp(1.9rem,4vw,3rem);margin:10px 0 20px}.lead{font-size:1.13rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero-art{display:grid;grid-template-columns:1fr 1fr;gap:15px;transform:rotate(5deg)}.hero-art .gamecard:nth-child(2){transform:translateY(35px) rotate(6deg)}.gamecard{aspect-ratio:3/4.1;border:7px solid #bdc2c9;border-radius:12px;background:#222b44;box-shadow:8px 10px 0 #0005;overflow:hidden;display:flex;flex-direction:column;position:relative}.gamecard:before{content:'PICO-8';position:absolute;top:9px;left:9px;background:#d3d6dc;color:#232a37;font-weight:1000;font-size:10px;padding:2px 7px;z-index:1;letter-spacing:.12em}.art{flex:1;display:flex;justify-content:center;align-items:center;font-size:clamp(3rem,7vw,6rem);background:radial-gradient(circle at 50% 35%,var(--art2),var(--art1));text-shadow:5px 6px #0005}.cardfoot{background:#d4d7dd;color:#1c2637;padding:10px;font-weight:900;font-size:.8rem;letter-spacing:.04em;min-height:58px}.cardfoot small{display:block;font-weight:600;color:#566071}.section{padding:70px 0}.section.alt{background:#151e35;border-block:1px solid #34415e}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:25px}.sectionhead p{color:var(--muted);margin:0}.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 28px}.field{background:var(--panel);border:2px solid var(--border);border-radius:5px;color:var(--ink);padding:12px 14px;min-height:48px}.field:focus{outline:2px solid var(--cyan);outline-offset:2px}#search{flex:1;min-width:210px}#genre{min-width:190px}.count{color:var(--muted);align-self:center}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.tile{background:var(--panel);padding:13px;border:1px solid var(--border);border-radius:9px;display:flex;flex-direction:column;gap:12px}.tile .gamecard{box-shadow:none}.tile h3{margin:0;font-size:1rem}.tile p{color:var(--muted);font-size:.87rem;margin:0}.tile a{margin-top:auto;color:var(--cyan);font-weight:800;text-decoration:none}.tile a:hover{text-decoration:underline}.number{font-size:.72rem;color:var(--yellow);font-weight:900}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:var(--panel);padding:23px;border:1px solid var(--border);border-radius:8px}.step b{font-size:1.8rem;color:var(--yellow)}.step h3{margin:8px 0}.step p{color:var(--muted);margin:0;font-size:.9rem}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}.panel{background:var(--panel);border:1px solid var(--border);padding:28px;border-radius:9px}.panel label{font-size:.9rem;font-weight:750;display:block;margin:16px 0 6px}.panel .field{width:100%}.panel textarea{min-height:110px;resize:vertical}.check{display:flex;align-items:start;gap:10px;margin:20px 0}.check input{margin-top:6px;accent-color:var(--yellow)}.check label{margin:0;font-size:.85rem;font-weight:400}.notice{border-left:4px solid var(--cyan);padding:13px 17px;background:#203552;color:#d9e7f4;font-size:.88rem;margin:18px 0}.notice.warning{border-color:var(--yellow)}.message{margin-top:14px;color:var(--cyan);font-weight:700}.muted{color:var(--muted)}footer{border-top:2px solid var(--border);padding:35px 0;color:var(--muted);font-size:.88rem}footer a{color:var(--cyan)}.empty{padding:35px;background:var(--panel);border-radius:8px}.menu-toggle{display:none}@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{max-width:440px;margin:0 auto 35px}.gallery{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}@media(max-width:570px){.menu-toggle{display:block;background:transparent;border:1px solid var(--border);color:var(--ink);padding:7px 10px;border-radius:4px}nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--bg);padding:20px;flex-direction:column;align-items:stretch;border-bottom:2px solid var(--border)}nav.open{display:flex}.gallery{gap:12px}.tile{padding:9px}.steps{grid-template-columns:1fr}.section{padding:50px 0}.hero{padding-top:50px}.panel{padding:18px}}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080808"><title>PICO-8 Game Cards — Unofficial Collector Project</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;display=swap">
+<style>
+:root{--bg:#080808;--panel:#1c1c1c;--panel2:#292929;--ink:#f4f4f4;--muted:#bcbcbc;--red:#fa5258;--accent:#ff777b;--border:#464646}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,Arial,sans-serif;background-image:linear-gradient(transparent 97%,#ffffff05 100%);background-size:100% 5px}a{color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1140px;margin:auto;padding:0 22px}header{position:sticky;top:0;z-index:10;background:#080808f5;backdrop-filter:blur(12px);border-bottom:2px solid var(--border)}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px}.logo{font-weight:900;letter-spacing:.05em;text-decoration:none;color:var(--red)}.logo span{color:var(--accent)}nav{display:flex;gap:20px;align-items:center}nav a{text-decoration:none;font-weight:700;font-size:.9rem}nav a:hover{color:var(--red)}.btn{border:2px solid var(--red);border-radius:5px;background:var(--red);color:#080808;padding:12px 18px;font-weight:900;text-decoration:none;display:inline-block;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:transparent;color:var(--red)}.btn.small{padding:7px 11px;font-size:.85rem}.hero{padding:90px 0 75px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}.eyebrow{color:var(--accent);font-size:.78rem;letter-spacing:.18em;font-weight:900;text-transform:uppercase}h1,h2,h3{line-height:1.14}h1{font-size:clamp(2.6rem,6vw,5.2rem);margin:16px 0 22px;letter-spacing:-.045em}h1 em{font-style:normal;color:var(--red)}h2{font-size:clamp(1.9rem,4vw,3rem);margin:10px 0 20px}.lead{font-size:1.13rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero-art{display:grid;grid-template-columns:1fr 1fr;gap:15px;transform:rotate(5deg)}.hero-art .gamecard:nth-child(2){transform:translateY(35px) rotate(6deg)}.gamecard{aspect-ratio:3/4.1;border:7px solid #bdc2c9;border-radius:12px;background:#222b44;box-shadow:8px 10px 0 #0005;overflow:hidden;display:flex;flex-direction:column;position:relative}.gamecard:before{content:'PICO-8';position:absolute;top:9px;left:9px;background:#d3d6dc;color:#232a37;font-weight:1000;font-size:10px;padding:2px 7px;z-index:1;letter-spacing:.12em}.art{flex:1;display:flex;justify-content:center;align-items:center;font-size:clamp(3rem,7vw,6rem);background:radial-gradient(circle at 50% 35%,var(--art2),var(--art1));text-shadow:5px 6px #0005}.cardfoot{background:#d4d7dd;color:#1c2637;padding:10px;font-weight:900;font-size:.8rem;letter-spacing:.04em;min-height:58px}.cardfoot small{display:block;font-weight:600;color:#566071}.section{padding:70px 0}.section.alt{background:#111111;border-block:1px solid #343434}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:25px}.sectionhead p{color:var(--muted);margin:0}.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 28px}.field{background:var(--panel);border:2px solid var(--border);border-radius:5px;color:var(--ink);padding:12px 14px;min-height:48px}.field:focus{outline:2px solid var(--accent);outline-offset:2px}#search{flex:1;min-width:210px}#genre{min-width:190px}.count{color:var(--muted);align-self:center}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.tile{background:var(--panel);padding:13px;border:1px solid var(--border);border-radius:9px;display:flex;flex-direction:column;gap:12px}.tile .gamecard{box-shadow:none}.tile h3{margin:0;font-size:1rem}.tile p{color:var(--muted);font-size:.87rem;margin:0}.tile a{margin-top:auto;color:var(--accent);font-weight:800;text-decoration:none}.tile a:hover{text-decoration:underline}.number{font-size:.72rem;color:var(--red);font-weight:900}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:var(--panel);padding:23px;border:1px solid var(--border);border-radius:8px}.step b{font-size:1.8rem;color:var(--red)}.step h3{margin:8px 0}.step p{color:var(--muted);margin:0;font-size:.9rem}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}.panel{background:var(--panel);border:1px solid var(--border);padding:28px;border-radius:9px}.panel label{font-size:.9rem;font-weight:750;display:block;margin:16px 0 6px}.panel .field{width:100%}.panel textarea{min-height:110px;resize:vertical}.check{display:flex;align-items:start;gap:10px;margin:20px 0}.check input{margin-top:6px;accent-color:var(--red)}.check label{margin:0;font-size:.85rem;font-weight:400}.notice{border-left:4px solid var(--accent);padding:13px 17px;background:#242424;color:#e5e5e5;font-size:.88rem;margin:18px 0}.notice.warning{border-color:var(--red)}.message{margin-top:14px;color:var(--accent);font-weight:700}.muted{color:var(--muted)}footer{border-top:2px solid var(--border);padding:35px 0;color:var(--muted);font-size:.88rem}footer a{color:var(--accent)}.empty{padding:35px;background:var(--panel);border-radius:8px}.menu-toggle{display:none}@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{max-width:440px;margin:0 auto 35px}.gallery{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}@media(max-width:570px){.menu-toggle{display:block;background:transparent;border:1px solid var(--border);color:var(--ink);padding:7px 10px;border-radius:4px}nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--bg);padding:20px;flex-direction:column;align-items:stretch;border-bottom:2px solid var(--border)}nav.open{display:flex}.gallery{gap:12px}.tile{padding:9px}.steps{grid-template-columns:1fr}.section{padding:50px 0}.hero{padding-top:50px}.panel{padding:18px}}
 
 .card-flip {
   display: block;
@@ -13,7 +15,7 @@
   cursor: pointer;
   perspective: 900px;
 }
-.card-flip:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+.card-flip:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .card-faces {
   display: grid;
   transform-style: preserve-3d;
@@ -35,9 +37,179 @@
   .card-faces { transition: none; }
 }
 .logo{display:flex;align-items:center;min-width:0}.logo img{display:block;width:auto;height:auto;max-width:min(320px,48vw);max-height:56px;object-fit:contain}
+
+
+:root {
+  --bg: #101010;
+  --panel: #21211f;
+  --panel2: #292825;
+  --ink: #f6f3ea;
+  --muted: #c5c1b7;
+  --red: #f04449;
+  --gold: #ffc75d;
+  --accent: var(--gold);
+  --border: #494642;
+  --display: "Archivo Black", "Arial Black", system-ui, sans-serif;
+}
+body { background: var(--bg); }
+header { background: #101010f5; border-bottom: 1px solid var(--border); }
+h1, h2, h3 { font-family: var(--display); font-weight: 900; }
+h2 { text-transform: uppercase; letter-spacing: -.045em; }
+h3 { letter-spacing: -.025em; }
+.cover {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: radial-gradient(ellipse at 50% 100%, #34312b 0, #101010 64%);
+  border-bottom: 1px solid var(--border);
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle at 31% 49%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 18% 26%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 12% 19%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 66% 28%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 84% 5%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 64% 60%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 65% 75%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 53% 13%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 31% 4%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 68% 54%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 50% 94%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 86% 35%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 10% 51%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 15% 86%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 45% 32%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 65% 85%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 76% 20%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 71% 6%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 91% 26%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 76% 60%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 38% 73%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 56% 19%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 78% 14%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 91% 47%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 66% 81%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 41% 21%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 69% 38%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 66% 91%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 46% 33%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 39% 45%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 36% 6%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 34% 50%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 92% 55%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 86% 52%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 23% 86%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 27% 22%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 16% 3%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 45% 23%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 31% 19%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 74% 59%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 55% 12%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 38% 93%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 6% 12%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 68% 69%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 21% 66%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 92% 21%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 26% 4%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 45% 51%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 97% 40%, #fff75 0 1px, transparent 1.6px),
+    radial-gradient(circle at 43% 48%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 84% 65%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 9% 81%, #fff32 0 1px, transparent 1.6px),
+    radial-gradient(circle at 76% 24%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 45% 57%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 17% 12%, #fff55 0 1px, transparent 1.6px),
+    radial-gradient(circle at 79% 30%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 62% 21%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 17% 15%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 84% 18%, #fffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 67% 94%, #fff32 0 1px, transparent 1.6px);
+  background-size: 650px 580px;
+  mask-image: linear-gradient(#000, #000 55%, transparent 98%);
+  pointer-events: none;
+}
+.hero {
+  display: block;
+  text-align: center;
+  padding: clamp(50px, 7vw, 96px) 0 44px;
+}
+.hero h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-shadow: 0 3px 0 #000;
+}
+.cover-kicker, .cover-title, .cover-subtitle { display: block; }
+.cover-kicker {
+  padding: 0 .5em .52em;
+  border-bottom: 3px solid var(--red);
+  font-size: clamp(.8rem, 2.4vw, 1.6rem);
+  letter-spacing: .075em;
+}
+.cover-title {
+  color: var(--red);
+  margin-top: .1em;
+  font-size: clamp(2rem, 9vw, 7.5rem);
+  letter-spacing: -.072em;
+}
+.cover-subtitle {
+  color: #e5dcc6;
+  margin-top: .4em;
+  font-size: clamp(.85rem, 2.8vw, 2rem);
+  letter-spacing: .16em;
+}
+.hero-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: 540px;
+  margin: 28px auto 24px;
+  padding: 18px 12px;
+  transform: none;
+}
+.hero-art img {
+  display: block;
+  width: 43%;
+  height: auto;
+  border-radius: 4%;
+  box-shadow: 0 12px 30px #000c;
+}
+.hero-art img:first-child { transform: rotate(-8deg); z-index: 1; }
+.hero-art img:last-child { margin-left: -4%; transform: translateY(12px) rotate(9deg); }
+.hero .lead { max-width: 37rem; margin: 20px auto 0; }
+.hero .actions { justify-content: center; }
+.btn {
+  background: var(--gold);
+  border-color: var(--gold);
+  border-radius: 2px;
+}
+.number, .step b { color: var(--gold); }
+.btn.secondary { color: var(--ink); border-color: #837d71; background: #101010d9; }
+.tile, .step, .panel { border-radius: 4px; }
+.sectionhead { border-bottom: 2px solid var(--red); margin-bottom: 24px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 </style></head><body>
 <header><div class="wrap nav"><a href="#home" class="logo"><img src="images/logo/logo.png" alt="PICO-8 Game Cards"></a><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button><nav id="nav"><a href="#collection">Collection</a><a href="#how">How it works</a><a href="#about">About</a><a class="btn small" href="#submit">Submit a game</a></nav></div></header>
-<main><section class="wrap hero" id="home"><div><div class="eyebrow">Unofficial • Community-driven • Retro-inspired</div><h1>TINY GAMES.<br><em>BIG LEGENDS.</em></h1><p class="lead">Your favorite PICO-8 games, reimagined as physical collectible cards. A curated tribute to indie developers and the golden age of gaming.</p><div class="actions"><a href="#collection" class="btn">Explore the collection ↗</a><a href="#submit" class="btn secondary">Submit your game</a></div></div><div class="hero-art" aria-label="Illustrative card designs"><div class="gamecard" style="--art1:#291a51;--art2:#9a4376"><div class="art" aria-hidden="true">👻</div><div class="cardfoot">GHOST THIEF<small>DEMO CARD · 001</small></div></div><div class="gamecard" style="--art1:#16435d;--art2:#75cde1"><div class="art" aria-hidden="true">🚀</div><div class="cardfoot">STAR RUNNER<small>FICTIONAL DEMO · 002</small></div></div></div></section>
+<main><div class="cover"><section class="wrap hero" id="home">
+  <h1>
+    <span class="cover-kicker">THE UNOFFICIAL COLLECTION</span>
+    <span class="cover-title">PICO-8 GAME CARDS</span>
+    <span class="cover-subtitle">THE PICO-8 GAME CATALOGUE</span>
+  </h1>
+  <a class="hero-art" href="#collection" aria-label="Explore the card collection">
+  <img src="images/cartes/recto/GT%20survivor.png" alt="Ghost Thief Survivor card front" width="744" height="1039" fetchpriority="high">
+  <img src="images/cartes/verso/GT%20survivor.png" alt="Ghost Thief Survivor card back" width="744" height="1039">
+</a>
+  <p class="lead">A collection of physical cards celebrating the games and creators of PICO-8.</p>
+  <div class="actions"><a href="#collection" class="btn">Explore the collection ↗</a><a href="#submit" class="btn secondary">Submit your game</a></div>
+</section></div>
 <section class="section alt" id="collection"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">The archive</div><h2>Explore the cards</h2><p>Select a card to flip it over.</p></div></div><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search games or creators…" aria-label="Search games or creators"><select id="genre" class="field" aria-label="Filter by genre"><option value="all">All genres</option></select><span class="count" id="count"></span></div><div class="gallery" id="gallery"></div><p id="empty" class="empty" hidden>No cards match your search.</p></div></section>
 <section class="section" id="how"><div class="wrap"><div class="eyebrow">Made with creators</div><h2>How it works</h2><div class="steps"><div class="step"><b>01</b><h3>Submit</h3><p>Developers nominate their own PICO-8 games.</p></div><div class="step"><b>02</b><h3>Selection</h3><p>Games are individually reviewed for a curated collection. Submission does not guarantee selection.</p></div><div class="step"><b>03</b><h3>Design & approval</h3><p>Selected developers review the card design and separately approve its permitted uses.</p></div><div class="step"><b>04</b><h3>Discover</h3><p>Approved cards appear in the gallery, linking back to their original games.</p></div></div></div></section>
 <section class="section alt" id="submit"><div class="wrap split"><div><div class="eyebrow">For PICO-8 creators</div><h2>Put your game on the map.</h2><p class="lead">Want your game to be considered for a collectible card? Tell us about it! We review each submission and retain editorial control over the collection.</p><div class="notice">Applying does not grant us permission to print or sell your game's artwork. If selected, we'll request a separate, explicit rights authorization and send the final card for your approval.</div><p class="muted">This prototype does not send or store submissions. You can copy the application and send it manually, or connect a form service when launching.</p></div><form class="panel" id="application"><h3 style="margin-top:0">Game submission</h3><label for="game">Game title *</label><input class="field" id="game" required maxlength="120" placeholder="Your PICO-8 game"><label for="creator">Creator nickname *</label><input class="field" id="creator" required maxlength="120" placeholder="Your developer name"><label for="url">Game URL *</label><input class="field" id="url" type="url" required placeholder="https://www.lexaloffle.com/bbs/..."><label for="email">Contact email *</label><input class="field" id="email" type="email" required placeholder="creator@example.com"><label for="gameGenre">Genre</label><select class="field" id="gameGenre"><option>Arcade</option><option>Action</option><option>Adventure</option><option>Platformer</option><option>Puzzle</option><option>Strategy</option><option>RPG</option><option>Other</option></select><label for="desc">Tell us about your game</label><textarea class="field" id="desc" maxlength="1000" placeholder="What makes your game special?"></textarea><div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the creator or authorized representative of this game. *</label></div><div class="check"><input type="checkbox" id="privacy" required><label for="privacy">I understand that this demo only copies my application locally and does not submit it. *</label></div><button class="btn" type="submit">Copy my application →</button><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
