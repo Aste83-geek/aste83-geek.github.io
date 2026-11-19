@@ -145,7 +145,7 @@ h3 { letter-spacing: -.025em; }
   letter-spacing: normal;
   text-shadow: 0 3px 0 #000;
 }
-.cover-kicker, .cover-title, .cover-subtitle { display: block; }
+.cover-kicker, .cover-title { display: block; }
 .cover-kicker {
   padding: 0 .5em .52em;
   border-bottom: 3px solid var(--red);
@@ -155,14 +155,8 @@ h3 { letter-spacing: -.025em; }
 .cover-title {
   color: var(--red);
   margin-top: .1em;
-  font-size: clamp(2rem, 9vw, 7.5rem);
+  font-size: clamp(1.65rem, 7vw, 5.5rem);
   letter-spacing: -.072em;
-}
-.cover-subtitle {
-  color: #e5dcc6;
-  margin-top: .4em;
-  font-size: clamp(.85rem, 2.8vw, 2rem);
-  letter-spacing: .16em;
 }
 .hero-art {
   display: flex;
@@ -195,25 +189,51 @@ h3 { letter-spacing: -.025em; }
 .tile, .step, .panel { border-radius: 4px; }
 .sectionhead { border-bottom: 2px solid var(--red); margin-bottom: 24px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+ .print-goal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 8px 16px;
+  max-width: 32rem;
+  margin: 24px auto 0;
+  text-align: center;
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+.print-goal strong { color: var(--gold); }
+.print-goal progress { grid-column: 1 / -1; width: 100%; accent-color: var(--gold); }
 </style></head><body>
 <header><div class="wrap nav"><a href="#home" class="logo"><img src="images/logo/logo.png" alt="PICO-8 Game Cards"></a><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button><nav id="nav"><a href="#collection">Collection</a><a href="#how">How it works</a><a href="#about">About</a><a class="btn small" href="#submit">Submit a game</a></nav></div></header>
 <main><div class="cover"><section class="wrap hero" id="home">
   <h1>
-    <span class="cover-kicker">THE UNOFFICIAL COLLECTION</span>
+    <span class="cover-kicker">AN INDEPENDENT FAN PROJECT</span>
     <span class="cover-title">PICO-8 GAME CARDS</span>
-    <span class="cover-subtitle">THE PICO-8 GAME CATALOGUE</span>
   </h1>
   <a class="hero-art" href="#collection" aria-label="Explore the card collection">
   <img src="images/cartes/recto/GT%20survivor.png" alt="Ghost Thief Survivor card front" width="744" height="1039" fetchpriority="high">
   <img src="images/cartes/verso/GT%20survivor.png" alt="Ghost Thief Survivor card back" width="744" height="1039">
 </a>
-  <p class="lead">A collection of physical cards celebrating the games and creators of PICO-8.</p>
-  <div class="actions"><a href="#collection" class="btn">Explore the collection ↗</a><a href="#submit" class="btn secondary">Submit your game</a></div>
+  <p class="lead">Help us turn PICO-8 games into physical trading cards. Our goal is to launch the first print run when the gallery reaches <strong>50 creator-approved cards</strong>.</p>
+  <div class="print-goal">
+    <label for="print-progress">Road to the first print run</label>
+    <strong id="print-count"></strong>
+    <progress id="print-progress" max="50" value="0"></progress>
+  </div>
+  <div class="actions"><a href="#submit" class="btn">Submit your game ↗</a><a href="#collection" class="btn secondary">Explore the collection</a></div>
 </section></div>
-<section class="section alt" id="collection"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">The archive</div><h2>Explore the cards</h2><p>Select a card to flip it over.</p></div></div><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search games or creators…" aria-label="Search games or creators"><select id="genre" class="field" aria-label="Filter by genre"><option value="all">All genres</option></select><span class="count" id="count"></span></div><div class="gallery" id="gallery"></div><p id="empty" class="empty" hidden>No cards match your search.</p></div></section>
-<section class="section" id="how"><div class="wrap"><div class="eyebrow">Made with creators</div><h2>How it works</h2><div class="steps"><div class="step"><b>01</b><h3>Submit</h3><p>Developers nominate their own PICO-8 games.</p></div><div class="step"><b>02</b><h3>Selection</h3><p>Games are individually reviewed for a curated collection. Submission does not guarantee selection.</p></div><div class="step"><b>03</b><h3>Design & approval</h3><p>Selected developers review the card design and separately approve its permitted uses.</p></div><div class="step"><b>04</b><h3>Discover</h3><p>Approved cards appear in the gallery, linking back to their original games.</p></div></div></div></section>
-<section class="section alt" id="submit"><div class="wrap split"><div><div class="eyebrow">For PICO-8 creators</div><h2>Put your game on the map.</h2><p class="lead">Want your game to be considered for a collectible card? Tell us about it! We review each submission and retain editorial control over the collection.</p><div class="notice">Applying does not grant us permission to print or sell your game's artwork. If selected, we'll request a separate, explicit rights authorization and send the final card for your approval.</div><p class="muted">This prototype does not send or store submissions. You can copy the application and send it manually, or connect a form service when launching.</p></div><form class="panel" id="application"><h3 style="margin-top:0">Game submission</h3><label for="game">Game title *</label><input class="field" id="game" required maxlength="120" placeholder="Your PICO-8 game"><label for="creator">Creator nickname *</label><input class="field" id="creator" required maxlength="120" placeholder="Your developer name"><label for="url">Game URL *</label><input class="field" id="url" type="url" required placeholder="https://www.lexaloffle.com/bbs/..."><label for="email">Contact email *</label><input class="field" id="email" type="email" required placeholder="creator@example.com"><label for="gameGenre">Genre</label><select class="field" id="gameGenre"><option>Arcade</option><option>Action</option><option>Adventure</option><option>Platformer</option><option>Puzzle</option><option>Strategy</option><option>RPG</option><option>Other</option></select><label for="desc">Tell us about your game</label><textarea class="field" id="desc" maxlength="1000" placeholder="What makes your game special?"></textarea><div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the creator or authorized representative of this game. *</label></div><div class="check"><input type="checkbox" id="privacy" required><label for="privacy">I understand that this demo only copies my application locally and does not submit it. *</label></div><button class="btn" type="submit">Copy my application →</button><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
-<section class="section" id="about"><div class="wrap"><div class="eyebrow">About the project</div><h2>Built for the love of tiny games.</h2><p class="lead">PICO-8 Game Cards is an independent fan initiative inspired by vintage video game packaging, retro trading cards and the creativity of the PICO-8 community. Each card is a small tribute to its creator, with a link to discover the original game.</p><div class="notice warning"><strong>Unofficial project.</strong> Not affiliated with, endorsed by or sponsored by Lexaloffle or PICO-8. Game artwork remains the property of its respective rights holders. Public release and any paid printing require the relevant permissions. Add your legal notices and privacy policy before collecting real submissions.</div></div></section></main>
+<section class="section alt" id="collection"><div class="wrap"><div class="sectionhead"><div><h2>Explore the cards</h2><p>See the cards that are bringing the first print run closer. Select a card to flip it over.</p></div></div><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search games or creators…" aria-label="Search games or creators"><select id="genre" class="field" aria-label="Filter by genre"><option value="all">All genres</option></select><span class="count" id="count"></span></div><div class="gallery" id="gallery"></div><p id="empty" class="empty" hidden>No cards match your search.</p></div></section>
+<section class="section" id="how"><div class="wrap"><h2>From game to printed card</h2>
+<div class="steps">
+  <div class="step"><b>01</b><h3>Pitch your game</h3><p>Send us a link to your PICO-8 game and tell us what makes it yours.</p></div>
+  <div class="step"><b>02</b><h3>Review your card</h3><p>If we select your game, you get to review both sides of the card and confirm how you want to be credited.</p></div>
+  <div class="step"><b>03</b><h3>Approve publication</h3><p>After you approve the design, one written permission can cover the uses you agree to: online publication, printing, distribution and sale. Published cards credit you and link to your game.</p></div>
+  <div class="step"><b>04</b><h3>Print the collection</h3><p>At 50 approved cards in the gallery, we aim to launch the first print run. We print, distribute and sell cards according to the permissions agreed with their rights holders.</p></div>
+</div></div></section>
+<section class="section alt" id="submit"><div class="wrap split"><div><h2>Bring your game to the collection</h2>
+<p class="lead">Give players a new way to discover your game, from a card they can flip online to one they can hold in their hands.</p>
+<div class="notice"><strong>You keep your rights.</strong> Submitting your game starts a conversation. You review both sides of the card and choose which uses to authorize in writing. If you agree to sales, the permission also sets out the sales terms, including any provision for a margin.</div>
+<p class="muted">Fill in the form to open a draft in your email app. Review the message and send it when you are ready. If your email app does not open, you can send your submission directly to <a id="submission-contact" href="mailto:alexandre.stevenoot@hotmail.fr">alexandre.stevenoot@hotmail.fr</a>.</p></div><form class="panel" id="application"><h3 style="margin-top:0">Game submission</h3><label for="game">Game title *</label><input class="field" id="game" required maxlength="120" placeholder="Your PICO-8 game"><label for="creator">Creator nickname *</label><input class="field" id="creator" required maxlength="120" placeholder="Your developer name"><label for="url">Game URL *</label><input class="field" id="url" type="url" required placeholder="https://www.lexaloffle.com/bbs/..."><label for="gameGenre">Genre</label><select class="field" id="gameGenre"><option>Arcade</option><option>Action</option><option>Adventure</option><option>Platformer</option><option>Puzzle</option><option>Strategy</option><option>RPG</option><option>Other</option></select><label for="desc">Tell us about your game</label><textarea class="field" id="desc" maxlength="1000" placeholder="What makes your game special?"></textarea><div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the creator or authorized representative of this game. *</label></div><button class="btn" type="submit">Email my submission ↗</button><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
+<section class="section" id="about"><div class="wrap"><div class="eyebrow">About the project</div><h2>Built for the love of tiny games.</h2><p class="lead">PICO-8 Game Cards is an independent fan initiative inspired by vintage video game packaging, retro trading cards and the creativity of the PICO-8 community. Each card is a small tribute to its creator, with a link to discover the original game.</p><h3>How we price the cards</h3><p>For the first print run, our goal is to cover production and fulfilment costs. If demand grows and running the project takes substantial time, future prices may include a modest margin, where the agreed sales terms allow it.</p><div class="notice warning"><strong>Unofficial project.</strong> Not affiliated with, endorsed by or sponsored by Lexaloffle or PICO-8. Game artwork remains the property of its respective rights holders. We use approved artwork only for the purposes agreed in writing.</div></div></section></main>
 <footer><div class="wrap">© <span id="year"></span> PICO-8 Game Cards — Independent fan project · <a href="#about">About & rights</a></div></footer>
 <script>
 'use strict';
@@ -268,6 +288,12 @@ const cards = [
     url: 'https://www.lexaloffle.com/bbs/?tid=160000'
   }
 ];
+// Keep this list limited to cards approved for public display.
+const printProgress = document.querySelector('#print-progress');
+printProgress.value = cards.length;
+document.querySelector('#print-count').textContent =
+  `${cards.length} / ${printProgress.max} cards in the gallery`;
+
 const gallery = document.querySelector('#gallery');
 const search = document.querySelector('#search');
 const genre = document.querySelector('#genre');
@@ -324,5 +350,41 @@ search.addEventListener('input', render);
 genre.addEventListener('change', render);
 render();
 document.querySelector('#year').textContent=new Date().getFullYear();const menu=document.querySelector('#menuToggle'),nav=document.querySelector('#nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
-document.querySelector('#application').addEventListener('submit',async e=>{e.preventDefault();const url=document.querySelector('#url').value;let u;try{u=new URL(url);if(!['https:','http:'].includes(u.protocol))throw Error()}catch{document.querySelector('#formMessage').textContent='Please enter a valid game URL.';return}const data=`PICO-8 GAME CARDS — APPLICATION\nGame: ${document.querySelector('#game').value}\nCreator: ${document.querySelector('#creator').value}\nGame URL: ${url}\nEmail: ${document.querySelector('#email').value}\nGenre: ${document.querySelector('#gameGenre').value}\nDescription: ${document.querySelector('#desc').value}\nCreator confirmation: Yes`;try{await navigator.clipboard.writeText(data);document.querySelector('#formMessage').textContent='Application copied! This prototype has not submitted it.'}catch{const blob=new Blob([data],{type:'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pico8-game-cards-application.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);document.querySelector('#formMessage').textContent='Application downloaded as a text file. Nothing was submitted.'}});
+const application = document.querySelector('#application');
+const submissionContact = document.querySelector('#submission-contact');
+const formMessage = document.querySelector('#formMessage');
+
+application.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const fields = application.elements;
+  const game = fields.game.value.trim();
+  const creator = fields.creator.value.trim();
+  let gameUrl;
+  try {
+    gameUrl = new URL(fields.url.value);
+  } catch {
+    formMessage.textContent = 'Please enter a valid game URL.';
+    return;
+  }
+  if (!['https:', 'http:'].includes(gameUrl.protocol)) {
+    formMessage.textContent = 'Please enter an HTTP or HTTPS game URL.';
+    return;
+  }
+
+  const subject = 'PICO-8 Game Cards submission: ' + game;
+  const body = [
+    'Game: ' + game,
+    'Creator: ' + creator,
+    'Game URL: ' + gameUrl.href,
+    'Genre: ' + fields.gameGenre.value,
+    'Description: ' + fields.desc.value.trim(),
+    '',
+    'I confirm that I am the creator or authorized representative of this game.'
+  ].join('\r\n');
+
+  formMessage.textContent = 'Review and send the draft from your email app.';
+  window.location.href = submissionContact.getAttribute('href') +
+    '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
 </script></body></html>
