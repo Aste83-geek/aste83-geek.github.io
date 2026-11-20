@@ -260,14 +260,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <div class="check"><input type="checkbox" id="allowSale" required><label for="allowSale" aria-describedby="saleTerms">Sale of physical copies</label></div>
 <p class="notice permission-help" id="saleTerms">This lets us sell physical copies without paying royalties. The main goal is to cover costs, and the organizer may earn a modest profit.</p>
 </fieldset>
-<div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the creator or authorized representative of this game. *</label></div><div class="submission-actions"><button class="btn" type="submit">Email my submission ↗</button><p id="permissionError" class="permission-error" role="alert" hidden></p></div><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
+<div class="check"><input type="checkbox" id="confirm" required><label for="confirm">I confirm that I am the rights holder of the game I’m submitting. *</label></div><div class="submission-actions"><button class="btn" type="submit">Email my submission ↗</button><p id="permissionError" class="permission-error" role="alert" hidden></p></div><div class="message" id="formMessage" role="status" aria-live="polite"></div></form></div></section>
 <section class="section" id="faq">
   <div class="wrap">
     <h2>FAQ</h2>
     <div class="panel faq-list">
       <div class="faq-item">
+        <h3>Can I submit a game I don’t own?</h3>
+        <p>No. If you love a game and would like to see it in the collection, encourage its creator to submit it if they hold the rights to the game. Only the game’s rights holder can request that it be added to the collection.</p>
+      </div>
+      <div class="faq-item">
         <h3>Can I submit a game under any license?</h3>
-        <p>Yes. PICO-8 games are welcome regardless of their license, including Creative Commons and all-rights-reserved games. If your game is selected, we’ll ask you to confirm the permissions for the final card.</p>
+        <p>Yes. PICO-8 games are welcome regardless of their license, including Creative Commons and all-rights-reserved games. If your game is selected, we’ll ask the relevant rights holders to confirm the permissions for the final card.</p>
       </div>
       <div class="faq-item">
         <h3>What happens after I submit my game?</h3>
@@ -478,7 +482,7 @@ application.addEventListener('submit', event => {
     document.querySelector('#saleTerms').textContent,
     document.querySelector('#permissionTerms').textContent,
     '',
-    'I confirm that I am the creator or authorized representative of this game.'
+    'I confirm that I am the rights holder of the game I’m submitting.'
   ].join('\r\n');
 
   formMessage.textContent = 'Review and send the draft from your email app.';
